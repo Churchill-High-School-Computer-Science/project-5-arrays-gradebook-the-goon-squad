@@ -17,7 +17,23 @@ public class Gradebook {
     }
 
     public boolean changeGrade(String lastName, String assnName, int newGrade) {
-        // Your code here
+        int colIndex = -1;
+
+        for (int i = 0; i < labels.length; i++) {
+            if (labels[i].equalsIgnoreCase(assnName)) {
+                colIndex = i;
+                break;
+            }
+        }
+    
+        for (String[] book1 : book) {
+            if (book1[0].equalsIgnoreCase(lastName)) {
+                book1[colIndex] = String.valueOf(newGrade);
+                return true;
+            }
+        }
+    
+        System.out.println("Student not found.");
         return false;
     }
 
@@ -32,7 +48,15 @@ public class Gradebook {
     }
 
     public void printStudentInfo(String lastName) {
-        // Your code here
+        for (String[] book1 : book) {
+            if (book1[0].equalsIgnoreCase(lastName)) {
+                for (int j = 0; j < book1.length; j++) {
+                    System.out.println(labels[j] + ": " + book1[j]);
+                }
+                System.out.println("---------");
+                return;
+            }
+        }
     }
 
 }

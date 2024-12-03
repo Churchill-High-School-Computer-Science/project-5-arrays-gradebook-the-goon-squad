@@ -36,5 +36,26 @@ public class Main {
         Gradebook testBook1 = new Gradebook(data1);
         Gradebook testBook2 = new Gradebook(data2);
 
+
+        // Change a grade
+        testBook1.changeGrade("Borjigin", "Homework3", 100);
+        testBook2.changeGrade("Rostova", "Homework3", 100);
+
+        // Find the assignment average
+        System.out.println("Homework3 average: " + testBook1.findAssignmentAverage("Homework3"));
+        System.out.println("Homework3 average: " + testBook2.findAssignmentAverage("Homework3"));
+
+        // Find the student's average
+        System.out.println("Temüjin Borjigin's average: " + testBook1.findStudentAverage("Borjigin"));
+        System.out.println("Natasha Rostova's average: " + testBook2.findStudentAverage("Rostova"));
+
+        // Print student's info
+        System.out.println("Temüjin Borjigin's info:");
+        testBook1.printStudentInfo("Borjigin");
+
+        System.out.println("Natasha Rostova's info:");
+        testBook2.printStudentInfo("Rostova");
+
+
     }
 }
