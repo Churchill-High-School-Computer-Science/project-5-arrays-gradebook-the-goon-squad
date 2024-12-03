@@ -60,7 +60,17 @@ public class Gradebook {
 
     public double findStudentAverage(String lastName) {
         // Your code here
-        return -1;
+        int sigma = 0;
+
+        for (String[] book1 : book) {
+            if (book1[0].equalsIgnoreCase(lastName)) {
+                for (int j = 0; j < book1.length; j++) {
+                    int gyat = Integer.parseInt(book1[j]);  
+                    sigma += gyat; 
+                }
+            }
+        }
+       return sigma / 14;
     }
 
     public void printStudentInfo(String lastName) {
