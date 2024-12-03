@@ -55,7 +55,6 @@ public class Gradebook {
                 count++;
             }
 
-    
         return total / count;
     }
 

@@ -38,12 +38,12 @@ public class Main {
 
 
         // Change a grade
-        testBook1.changeGrade("Borjigin", "Homework3", 100);
-        testBook2.changeGrade("Rostova", "Homework3", 100);
+        String assnName = "Test1";
+        testBook1.changeGrade("Borjigin", assnName, 100);
+        testBook2.changeGrade("Rostova", assnName, 100);
 
-        // Find the assignment average
-        System.out.println("Homework3 average: " + testBook1.findAssignmentAverage("Homework3"));
-        System.out.println("Homework3 average: " + testBook2.findAssignmentAverage("Homework3"));
+        System.out.println(assnName + " average: " + testBook1.findAssignmentAverage(assnName));
+        System.out.println(assnName +" average: " + testBook2.findAssignmentAverage(assnName));
 
         // Find the student's average
         System.out.println("Temüjin Borjigin's average: " + testBook1.findStudentAverage("Borjigin"));
