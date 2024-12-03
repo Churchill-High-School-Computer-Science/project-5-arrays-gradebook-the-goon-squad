@@ -38,8 +38,25 @@ public class Gradebook {
     }
 
     public double findAssignmentAverage(String assnName) {
-        // Your code here
-        return -1;
+        int colIndex = -1;
+
+        for (int i = 0; i < labels.length; i++) {
+            if (labels[i].equalsIgnoreCase(assnName)) {
+                colIndex = i;
+                break;
+            }
+        }
+    
+        double total = 0;
+        int count = 0;
+    
+        for (String[] book1 : book) {
+                total += Double.parseDouble(book1[colIndex]);
+                count++;
+            }
+
+    
+        return total / count;
     }
 
     public double findStudentAverage(String lastName) {
