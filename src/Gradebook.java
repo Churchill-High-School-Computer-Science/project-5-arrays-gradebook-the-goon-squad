@@ -58,20 +58,38 @@ public class Gradebook {
         return total / count;
     }
 
-    public double findStudentAverage(String lastName) {
+    public double findStudentAverage(String lastName) 
+    {
         // Your code here
         int sigma = 0;
-
-        for (String[] book1 : book) {
-            if (book1[0].equalsIgnoreCase(lastName)) {
-                for (int j = 0; j < book1.length; j++) {
-                    int gyat = Integer.parseInt(book1[j]);  
-                    sigma += gyat; 
-                }
-            }
+        int antisigma = 0;
+        for (String[] book1 : book) 
+        {
+            if (antisigma >= 2) 
+            {
+                if (book1[0].equalsIgnoreCase(lastName)) 
+                {
+                    for (int j = 0; j < book1.length; j++) 
+                    {
+                        int gyat = Integer.parseInt(book1[j]);  
+                        sigma += gyat; 
+                    }
+                }              
+            }      
         }
-       return sigma / 14;
+        return sigma / 14;
     }
+
+    
+
+            
+                    
+            
+      
+            
+        
+       
+    
 
     public void printStudentInfo(String lastName) {
         for (String[] book1 : book) {
