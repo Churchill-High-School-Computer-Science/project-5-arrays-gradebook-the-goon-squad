@@ -59,13 +59,12 @@ public class Gradebook {
     }
 
     public double findStudentAverage(String lastName) {
-        // Your code here
         int sigma = 0;
 
         for (String[] book1 : book) {
             if (book1[0].equalsIgnoreCase(lastName)) {
-                for (int j = 0; j < book1.length; j++) {
-                    int gyat = Integer.parseInt(book1[j]);  
+                for (String book11 : book1) {
+                    int gyat = Integer.parseInt(book11);
                     sigma += gyat; 
                 }
             }
