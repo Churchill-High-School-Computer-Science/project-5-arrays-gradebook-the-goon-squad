@@ -65,19 +65,26 @@ public class Gradebook {
         int antisigma = 0;
         for (String[] book1 : book) 
         {
-            if (antisigma >= 2) 
+            
             {
                 if (book1[0].equalsIgnoreCase(lastName)) 
                 {
                     for (int j = 0; j < book1.length; j++) 
                     {
-                        int gyat = Integer.parseInt(book1[j]);  
+                        if (antisigma >= 2) 
+                        {
+                            Double gyat = Double.parseDouble(book1[j]);  
+                     
                         sigma += gyat; 
+                        }
+                        antisigma += 1; 
                     }
-                }              
+                }           
+                  
             }      
+            
         }
-        return sigma / 14;
+        return (double)sigma / 12;
     }
 
     
